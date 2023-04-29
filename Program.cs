@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(p => p.AddPolicy("corspolicy", build => build.WithOrigins("http://127.0.0.1:5173").AllowAnyMethod().AllowAnyHeader()));
+builder.Services.AddCors(p => p.AddPolicy("corspolicy", build => build.WithOrigins("http://localhost:5173").AllowAnyMethod().AllowAnyHeader()));
 
 builder.Services.AddDbContext<ProgrammeDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionStrings")));
 
